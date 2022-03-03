@@ -1,0 +1,3 @@
+httpClient
+
+http.get(${{environment.apiUrl}}+/..)
