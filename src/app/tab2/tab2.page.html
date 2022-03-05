@@ -1,29 +1,18 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
-      Lunchtime
+      HEADER
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Lunchtime</ion-title>
-    </ion-toolbar>
-  </ion-header>
 
+  <ion-text style="text-align: center;">
+    <h2>Bienvenue sur l'appli mobile de  Stone-lunchtime!</h2>
+    <h6>Voici les menus de la semaine 🍲</h6>
+  </ion-text>
   <div *ngFor="let menu of menusWeek">
-    <ion-row>
-      <ion-col>
-        {{menu.label}}
-      </ion-col>
-    </ion-row>
-
-  <swiper #swiper>
-    <ng-template swiperSlide>Slide1</ng-template>
-    <ng-template swiperSlide>Slide2</ng-template>
-    <ng-template swiperSlide>Slide3</ng-template>
-  </swiper>
+    <app-card-menu [menuId]="menu.id"></app-card-menu>
   </div>
 </ion-content>

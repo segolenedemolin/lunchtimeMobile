@@ -1,0 +1,24 @@
+<ion-card>
+  <ion-card-header>
+    <ion-item color="warning">
+      <ion-icon name="restaurant-outline"></ion-icon>
+      <ion-label>{{menu.label}}</ion-label>
+    </ion-item>
+  </ion-card-header>
+  <ion-card-content>
+    <ion-list *ngFor="let meal of meals">
+      <ion-item>
+        <ion-avatar>
+          <img [src]="meal.img" alt="">
+        </ion-avatar>
+        <ion-label>{{meal.label}}</ion-label>
+        <ion-button shape="round" size="small" color="warning" id="view-button" (click)="setMealId(meal.id)">
+          <ion-icon slot="icon-only" name="eye-outline"></ion-icon>
+        </ion-button>
+      </ion-item>
+    </ion-list>
+  </ion-card-content>
+</ion-card>
+  <app-modal-detailled *ngIf="show" [show]="show"  [mealId]="mealId" [menuId]="menu.id"></app-modal-detailled>
+
+
